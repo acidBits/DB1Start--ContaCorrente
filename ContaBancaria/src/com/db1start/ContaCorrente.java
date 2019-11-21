@@ -6,14 +6,16 @@ import java.util.Map;
 public class ContaCorrente {
 	public String cliente;
 	private double saldo;
-	private static Integer numeroConta = 0;
+	private Integer numeroConta;
+	private static Integer qtdConta = 0;
 	
 	private Map<String, String> listaOperacoes = new HashMap<String, String>(); 
 
 	 
 	public ContaCorrente(String cliente) { 
 		this.cliente = cliente;
-		numeroConta += 1;
+		qtdConta += 1;
+		numeroConta = qtdConta; 
 	}
 	
 	public void depositar(double valor) {
@@ -51,7 +53,7 @@ public class ContaCorrente {
 	public Map<String, String> extrato() {
 		 System.out.println("\nCliente: " + this.cliente +
 				 			"\nConta: " + numeroConta +
-				 			"\nSaldo :" + this.saldo);
+				 			"\nSaldo: " + this.saldo);
 		 
 		 return this.listaOperacoes;
 	}
