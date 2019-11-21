@@ -1,24 +1,34 @@
 package com.db1start;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ContaCorrente {
 	public String cliente;
 	private double saldo;
-	private static Integer conta;
+	private static Integer numeroConta = 0;
+	
+	private Map<String, String> listaOperacoes = new HashMap<String, String>(); 
+
 	 
 	public ContaCorrente(String cliente) { 
 		this.cliente = cliente;
-		conta += 1;
+		numeroConta += 1;
 	}
 	
 	public void depositar(double valor) {
 		this.saldo += valor;
+		listaOperacoes.put("deposito", Double.toString(valor));
 	}
 	
 	public void sacar(double valor) {
-		if(this.saldo < (this.saldo - valor))
+		if(this.saldo < (this.saldo - valor)) {
 			System.out.println("Saldo Insuficiente");
-		else
+		}
+		else {
 			this.saldo -= valor;
+			listaOperacoes.put("saque", Double.toString(valor));
+		}
 	}
 
 	public double saldo() {
@@ -32,12 +42,15 @@ public class ContaCorrente {
 
 		this.saldo -= valor;
 		conta1.saldo += valor;
+		listaOperacoes.put("transferencia", Double.toString(valor)); 
 		return true;  
 	}
 	
-	public String extrato() {
-		return "Cliente: " + this.cliente +
-			   "\nConta: " + conta +
-			   "\nSaldo :" + this.saldo;
+	public Map<String, String> extrato() {
+		 System.out.println("\nCliente: " + this.cliente +
+				 			"\nConta: " + numeroConta +
+				 			"\nSaldo :" + this.saldo + "\n");
+		 
+		 return this.listaOperacoes;
 	}
 }
