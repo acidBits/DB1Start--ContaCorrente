@@ -40,7 +40,7 @@ public class ContaCorrente {
 			return false;
 	
 
-		this.saldo -= valor;
+		this.saldo -= valor; 
 		conta1.saldo += valor;
 		listaOperacoes.put("transferencia", Double.toString(valor)); 
 		return true;  
@@ -49,7 +49,7 @@ public class ContaCorrente {
 	public Map<String, String> extrato() {
 		 System.out.println("\nCliente: " + this.cliente +
 				 			"\nConta: " + numeroConta +
-				 			"\nSaldo :" + this.saldo + "\n");
+				 			"\nSaldo :" + this.saldo);
 		 
 		 return this.listaOperacoes;
 	}
