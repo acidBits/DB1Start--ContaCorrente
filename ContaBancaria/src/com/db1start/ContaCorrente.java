@@ -3,11 +3,11 @@ package com.db1start;
 public class ContaCorrente {
 	public String cliente;
 	private double saldo;
-	private static Integer conta = 0;
-	
-	public ContaCorrente(String cliente) {
+	private static Integer conta;
+	 
+	public ContaCorrente(String cliente) { 
 		this.cliente = cliente;
-		this.conta += 1;
+		conta += 1;
 	}
 	
 	public void depositar(double valor) {
@@ -37,7 +37,7 @@ public class ContaCorrente {
 	
 	public String extrato() {
 		return "Cliente: " + this.cliente +
-			   "\nConta: " + this.conta +
+			   "\nConta: " + conta +
 			   "\nSaldo :" + this.saldo;
 	}
 }
