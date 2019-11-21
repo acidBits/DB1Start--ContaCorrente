@@ -24,11 +24,15 @@ public class ContaCorrente {
 	}
 	
 	public void depositar(double valor) {
+		if (valor < 0) {
+            throw new mensagemValidacao("Valor Invalido!");
+        }
+		
 		this.saldo += valor;
 		listaOperacao.add(dateFormat.format(data) + " Deposito R$:" + Double.toString(valor));
 	}
 	
-	public void sacar(double valor) {
+	public void sacar(double valor) { 
 		if(this.saldo < (this.saldo - valor)) {
 			System.out.println("Saldo Insuficiente");
 		} 
@@ -42,16 +46,16 @@ public class ContaCorrente {
 		return this.saldo;
 	}
 	
-	public boolean transferir(ContaCorrente conta1, double valor) { 
+	public boolean transferir(ContaCorrente conta, double valor) { 
 		if(this.saldo < valor)
-			return false;
+			throw new mensagemValidacao("Saldo Insuficiente!");
 	
 
 		this.saldo -= valor; 
 		this.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
 		
-		conta1.saldo += valor;
-		conta1.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
+		conta.saldo += valor;
+		conta.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
 		return true;  
 	}
 	
