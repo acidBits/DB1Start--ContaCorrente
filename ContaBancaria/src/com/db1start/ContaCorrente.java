@@ -8,16 +8,15 @@ import java.util.Date;
 
 public class ContaCorrente {
 	public String cliente;
-	private Date data = Calendar.getInstance().getTime();  
-    DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy"); 
-    
 	private double saldo;
-	private Integer numeroConta;
+	private Integer numeroConta; 
 	private static Integer qtdConta = 0;
 	private Integer qtdOperacao = 0;
 	
-	//private Map<String, String> listaOperacoes = new HashMap<String, String>(); 
 	ArrayList<String> listaOperacao = new ArrayList<String>();
+	
+	private Date data = Calendar.getInstance().getTime();  
+    DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
 
 	public ContaCorrente(String cliente) { 
 		this.cliente = cliente;

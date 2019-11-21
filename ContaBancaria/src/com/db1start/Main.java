@@ -21,7 +21,7 @@ public class Main {
 		
 		
 		System.out.println(conta1.extrato()); 
-		System.out.println(conta2.extrato());
+		System.out.println(conta2.extrato()); 
 	}
 
 }
