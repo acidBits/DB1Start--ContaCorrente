@@ -60,11 +60,11 @@ public class ContaCorrente {
 		return true;  
 	}
 	
-	public ArrayList<String> extrato() {
+	public void extrato() {
 		 System.out.println("\nCliente: " + this.cliente +
 				 			"\nConta: " + numeroConta +
-				 			"\nSaldo: " + this.saldo);
+				 			"\nSaldo: " + this.saldo); 
 		 
-		 return this.listaOperacao;
+		 listaOperacao.forEach(System.out::println);
 	}
 }

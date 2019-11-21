@@ -20,8 +20,8 @@ public class Main {
 		System.out.println(conta2.saldo());
 		
 		
-		System.out.println(conta1.extrato()); 
-		System.out.println(conta2.extrato()); 
+		conta1.extrato(); 
+		conta2.extrato();  
 	}
 
 }
