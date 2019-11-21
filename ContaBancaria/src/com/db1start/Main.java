@@ -21,7 +21,7 @@ public class Main {
 		
 		
 		conta1.extrato(); 
-		conta2.extrato();  
+		conta2.extrato();   
 	}
 
 }

@@ -5,13 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
+ 
 public class ContaCorrente {
 	public String cliente;
 	private double saldo;
 	private Integer numeroConta; 
 	private static Integer qtdConta = 0;
-	private Integer qtdOperacao = 0;
 	
 	ArrayList<String> listaOperacao = new ArrayList<String>();
 	
@@ -26,8 +25,7 @@ public class ContaCorrente {
 	
 	public void depositar(double valor) {
 		this.saldo += valor;
-		listaOperacao.add(dateFormat.format(data) + " Deposito R$: " + Double.toString(valor));
-		qtdOperacao += 1;
+		listaOperacao.add(dateFormat.format(data) + " Deposito R$:" + Double.toString(valor));
 	}
 	
 	public void sacar(double valor) {
@@ -36,8 +34,7 @@ public class ContaCorrente {
 		} 
 		else {
 			this.saldo -= valor;
-			listaOperacao.add(dateFormat.format(data) + " Saque R$: " + Double.toString(valor));
-			qtdOperacao += 1;
+			listaOperacao.add(dateFormat.format(data) + " Saque R$:" + Double.toString(valor));
 		}
 	}
 
@@ -51,12 +48,10 @@ public class ContaCorrente {
 	
 
 		this.saldo -= valor; 
-		this.listaOperacao.add(dateFormat.format(data) + " Transferencia R$: " + Double.toString(valor));
-		qtdOperacao += 1;
+		this.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
 		
 		conta1.saldo += valor;
-		conta1.listaOperacao.add(dateFormat.format(data) + " Transferencia R$: " + Double.toString(valor));
-		qtdOperacao += 1;
+		conta1.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
 		return true;  
 	}
 	
