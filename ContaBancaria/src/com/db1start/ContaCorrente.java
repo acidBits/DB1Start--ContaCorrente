@@ -35,14 +35,16 @@ public class ContaCorrente {
 		return this.saldo;
 	}
 	
-	public boolean transferir(ContaCorrente conta1, double valor) {
+	public boolean transferir(ContaCorrente conta1, double valor) { 
 		if(this.saldo < valor)
 			return false;
 	
 
 		this.saldo -= valor; 
+		this.listaOperacoes.put("transferencia", ("-" + Double.toString(valor)));
+		
 		conta1.saldo += valor;
-		listaOperacoes.put("transferencia", Double.toString(valor)); 
+		conta1.listaOperacoes.put("transferencia", ("+" + Double.toString(valor))); 
 		return true;  
 	}
 	

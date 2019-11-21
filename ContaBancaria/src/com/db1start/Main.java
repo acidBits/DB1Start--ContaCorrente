@@ -11,7 +11,7 @@ public class Main {
 		conta2.sacar(55.45);
 		
 		if(conta2.transferir(conta1, 25.75))
-				System.out.println("Operacao Realizada");
+			System.out.println("Operacao Realizada");
 		else
 			System.out.println("Saldo Insuficiente");
 		
@@ -20,6 +20,7 @@ public class Main {
 		System.out.println(conta2.saldo());
 		
 		
+		System.out.println(conta1.extrato()); 
 		System.out.println(conta2.extrato());
 	}
 
