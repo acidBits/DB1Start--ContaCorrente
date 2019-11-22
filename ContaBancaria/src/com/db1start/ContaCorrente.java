@@ -48,13 +48,13 @@ public class ContaCorrente {
 	
 	public boolean transferir(ContaCorrente conta, double valor) { 
 		if(this.saldo < valor)
-			throw new mensagemValidacao("Saldo Insuficiente!");
+			throw new mensagemValidacao("Saldo Insuficiente!"); 
 	
 
-		this.saldo -= valor; 
-		this.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
+		this.sacar(valor); 
+		this.listaOperacao.add(dateFormat.format(data) + " Transferencia R$: -" + Double.toString(valor));
 		
-		conta.saldo += valor;
+		conta.depositar(valor);
 		conta.listaOperacao.add(dateFormat.format(data) + " Transferencia R$:" + Double.toString(valor));
 		return true;  
 	}
