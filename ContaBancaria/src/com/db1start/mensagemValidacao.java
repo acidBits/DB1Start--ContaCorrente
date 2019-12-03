@@ -7,5 +7,4 @@ public class mensagemValidacao extends RuntimeException {
     	super(frase);
 	}
 
-
-} 
+}  

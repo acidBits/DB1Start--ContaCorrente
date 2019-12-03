@@ -9,7 +9,7 @@ import java.util.Date;
 public class ContaCorrente {
 	public String cliente;
 	private double saldo;
-	private Integer numeroConta; 
+	private Integer numeroConta;  
 	private static Integer qtdConta = 0;
 	
 	ArrayList<String> listaOperacao = new ArrayList<String>();
@@ -23,8 +23,15 @@ public class ContaCorrente {
 		this.numeroConta = qtdConta; 
 	}
 	
+	public ContaCorrente(String cliente, double valorInicial) { 
+		this.cliente = cliente;
+		this.depositar(valorInicial);
+		qtdConta += 1;
+		this.numeroConta = qtdConta; 
+	}
+	
 	public void depositar(double valor) {
-		if (valor < 0) {
+		if (valor < 0) { 
             throw new mensagemValidacao("Valor Invalido!");
         }
 		

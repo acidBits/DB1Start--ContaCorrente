@@ -17,9 +17,9 @@ public class Main {
 		System.out.println(conta2.saldo());
 		
 		
-		conta1.extrato(); 
+		conta1.extrato();  
 		conta2.extrato();   
 	}
-
+ 
 }
     
